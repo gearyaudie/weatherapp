@@ -49,7 +49,7 @@ function Weather() {
           <input
             type='text'
             value={query}
-            placeholder='Search..'
+            placeholder='Enter a City or Country...'
             onChange={(e) => setQuery(e.target.value)}
             onKeyPress={search}
           />
