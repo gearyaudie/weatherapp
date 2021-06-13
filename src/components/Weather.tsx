@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchWeather } from "../redux/actions/weather";
+import { RootState } from "../redux/reducers";
 
-function Weather() {
+export const Weather: React.FC = () => {
   const [query, setQuery] = useState("");
   const [date, setDate] = useState("");
 
@@ -17,14 +18,14 @@ function Weather() {
     base: "https://api.openweathermap.org/data/2.5/",
   };
 
-  const weatherData = useSelector((state) => state.weather.weather);
-  const iconData = useSelector((state) => state.weather.icon);
+  const weatherData = useSelector((state: RootState) => state.weather.weather);
+  const iconData = useSelector((state: RootState) => state.weather.icon);
   const dispatch = useDispatch();
 
   const iconUrl = `https://openweathermap.org/img/wn/${iconData}@4x.png`;
   // For the weather icon //
 
-  const getWeather = (e) => {
+  const getWeather = (e: any) => {
     e.preventDefault();
     console.log("form submitted");
     if (query === "") {
@@ -95,6 +96,4 @@ function Weather() {
       </div>
     </>
   );
-}
-
-export default Weather;
+};

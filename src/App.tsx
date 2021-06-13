@@ -1,9 +1,9 @@
 import React from "react";
-import Weather from "./components/Weather";
 import { Provider } from "react-redux";
+import { Weather } from "./components/Weather";
 import store from "./redux/store";
 
-function App() {
+const App: React.FC = () => {
   return (
     <Provider store={store}>
       <div className="App">
@@ -11,6 +11,6 @@ function App() {
       </div>
     </Provider>
   );
-}
+};
 
 export default App;

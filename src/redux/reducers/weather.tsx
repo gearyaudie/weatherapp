@@ -5,14 +5,14 @@ import {
   FETCH_ICON,
 } from "../types/weather";
 
-const initialState = {
+const initialState: any = {
   loading: false,
   weather: [],
   icon: "",
   error: "",
 };
 
-const weatherReducer = (state = initialState, action) => {
+const weatherReducer = (state = initialState, action: any): any => {
   switch (action.type) {
     case FETCH_WEATHER_REQUEST:
       return {
