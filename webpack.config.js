@@ -32,7 +32,6 @@ module.exports = {
         use: [
           {
             loader: "file-loader",
-            // type: "src/img",
           },
         ],
       },
